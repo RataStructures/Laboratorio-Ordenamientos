@@ -207,8 +207,8 @@ def main():
 
         elif int(inputs[0]) == 7:
             print("Ordenando los libros por rating ...")
-            #TODO:imprimir el resultado del ordenamiento
             result = logic.sort_books(control)
+            #TODO:imprimir el resultado del ordenamiento (print_sort_results)
             print("Tiempo de ejecución:", f"{result:.3f}", "[ms]")
 
         elif int(inputs[0]) == 8:

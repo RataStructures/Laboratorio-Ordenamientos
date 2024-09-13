@@ -186,7 +186,7 @@ def set_book_sublist(catalog, size):
     Crea una sublista de libros de tamaño size
     """
     books = catalog["books"]
-    catalog["book_sublist"] = data_structure.sub_list(books, 1, size) 
+    catalog["book_sublist"] = data_structure.sub_list(books, 0, size) 
     return catalog
 
 #  -------------------------------------------------------------
