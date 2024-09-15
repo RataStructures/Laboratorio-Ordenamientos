@@ -126,7 +126,26 @@ def print_book_info(book):
 
 
 def print_sort_results(sort_books, sample=3):
-    #TODO: completar funcion para imprimir resultados sort con muestra 3
+    """
+    Imprime la información de una muestra de libros ordenados.
+
+    Args:
+    sort_books (data_structure): La estructura de datos que contiene los libros ordenados.
+    sample (int): El número de libros a imprimir. Por defecto, 3.
+    
+    Se espera que la función imprima la información de 'sample' libros usando la función
+    print_book_info(). 
+    """
+
+    # Recorrer los elementos de la estructura de datos 'sort_books'.
+    for book_pos in range(0, data_structure.size(sort_books)):
+        # Si todavía hay libros que imprimir en la muestra.
+        if sample > 0:
+            # Obtener el libro en la posición actual.
+            book = data_structure.get_element(sort_books, book_pos)
+            # TODO: Completar la lógica para imprimir la información del libro usando print_book_info().
+            # Disminuir el contador de la muestra.
+            sample -= 1
     
 
 
