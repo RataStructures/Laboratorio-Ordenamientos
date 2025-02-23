@@ -320,8 +320,8 @@ def sort_books(catalog):
     #TODO: completar las opciones para selection_sort, insertion_sort y shell_sort
     
     if sort_algorithm == 1:
+        sorted_books_s = None  #TODO: completar la llamada a selection_sort
         pass
-        #TODO: completar la llamada a selection_sort
        
     elif sort_algorithm == 2:
         #TODO: completar la llamada a insertion_sort
