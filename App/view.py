@@ -3,7 +3,7 @@
  * de Los Andes
  *
  *
- * Desarrolado para el curso ISIS1225 - Estructuras de Datos y Algoritmos
+ * Desarrollado para el curso ISIS1225 - Estructuras de Datos y Algoritmos
  *
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,6 +22,7 @@
  * Contribuciones
  *
  * Dario Correal
+ * Lina Ojeda
  """
 
 import sys
@@ -38,6 +39,7 @@ se hace la solicitud al controlador para ejecutar la
 operación solicitada
 """
 
+
 def new_logic(data_structure):
     """
     Se crea una instancia del controlador
@@ -45,21 +47,21 @@ def new_logic(data_structure):
     control = logic.new_logic(data_structure)
     return control
 
+
 def print_menu():
     """
     Menu de usuario
     """
     print("Bienvenido")
-    #TODO: agregar opción 0 para escoger el tipo de estructura de datos
+    #TODO: agregar opción 0 para escoger el tipo de estructura de datos y opción 5 para seleccionar el algoritmo de ordenamiento
     print("1- Cargar información en el catálogo")
     print("2- Consultar la información de un libro")
     print("3- Consultar los libros de un autor")
     print("4- Libros por género")
-    print("5- Seleccionar algoritmo de ordenamiento")
     print("6- Seleccionar muestra de libros")
     print("7- Ordenar los libros por rating")
     print("8- Salir")
-    
+
 def select_data_structure():
     """
     Vista: Captura la selección del usuario y retorna
@@ -87,14 +89,12 @@ def select_data_structure():
             print("Opción no válida en el submenú")
             sub_input = ""
 
-
 def load_data(control):
     """
-    Solicita a la controlador que cargue los datos
+    Solicita al controlador que cargue los datos en el modelo
     """
-    books, authors, tags, book_tags = logic.load_data(control)
+    books, authors, tags, book_tags= logic.load_data(control)
     return books, authors, tags, book_tags
-
 
 def print_author_data(author):
     """
@@ -136,18 +136,17 @@ def print_sort_results(sort_books, sample=3):
     Se espera que la función imprima la información de 'sample' libros usando la función
     print_book_info(). 
     """
-
     # Recorrer los elementos de la estructura de datos 'sort_books'.
-    for book_pos in range(0, data_structure.size(sort_books)):
+    sorted_books=  sort_books[0]
+
+    for book_pos in range(0, data_structure.size(sorted_books)):
         # Si todavía hay libros que imprimir en la muestra.
         if sample > 0:
             # Obtener el libro en la posición actual.
-            book = data_structure.get_element(sort_books, book_pos)
+            book = data_structure.get_element(sorted_books, book_pos)
             # TODO: Completar la lógica para imprimir la información del libro usando print_book_info().
             # Disminuir el contador de la muestra.
             sample -= 1
-    
-
 
 # variables utiles para el programa
 
@@ -156,14 +155,13 @@ data_str="""Seleccione el algoritmo de estructura de datos:
 2. Linked_list
 """
 
-algo_str = """Seleccione el algoritmo de ordenamiento:
+algo_str = """Seleccione el algoritmo de ordenamiento recursivo:
 1. Selection Sort
-2. Merge Sort
+2. insertion Sort
+3. shell Sort
 """
                  
 exit_opt_lt = ("s", "S", "1", True, "true", "True", "si", "Si", "SI")
-
-
 
 
 # main del ejercicio
@@ -192,11 +190,7 @@ def main():
         elif int(inputs[0]) == 1:
             print("Cargando información de los archivos ....")
             bk, at, tg, bktg = load_data(control)
-            print('Libros cargados: ' + str(bk))
-            print('Autores cargados: ' + str(at))
-            print('Géneros cargados: ' + str(tg))
-            print('Asociación de Géneros a Libros cargados: ' +
-                  str(bktg))
+            #TODO: imprimir la cantidad de libros, autores, géneros y asociaciones de géneros a libros cargados
 
         elif int(inputs[0]) == 2:
             number = input("Ingrese el id del libro que desea buscar: ")
@@ -228,7 +222,7 @@ def main():
             print("Ordenando los libros por rating ...")
             result = logic.sort_books(control)
             #TODO:imprimir el resultado del ordenamiento (print_sort_results)
-            print("Tiempo de ejecución:", f"{result:.3f}", "[ms]")
+            print("Tiempo de ejecución:", f"{result[1]:.3f}", "[ms]")
 
         elif int(inputs[0]) == 8:
             # confirmar salida del programa

@@ -3,7 +3,7 @@
  * Universidad de Los Andes
  *
  *
- * Desarrolado para el curso ISIS1225 - Estructuras de Datos y Algoritmos
+ * Desarrollado para el curso ISIS1225 - Estructuras de Datos y Algoritmos
  *
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,20 +22,25 @@
  * Contribuciones
  *
  * Dario Correal
+ * Lina Ojeda
  """
 
-import os
 import csv
+import os
 import time
+from DataStructures.List import array_list as al
+from DataStructures.List import single_linked_list as lt
+# TODO Importar las librerías correspondientes para el manejo de pilas y colas
 
-
-# TODO: Importar las librería para el manejo de listas
-
-
-data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/'
+data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/GoodReads'
 
 sort_algorithm = None
 data_structure = None
+
+
+"""
+El controlador se encarga de mediar entre la vista y el modelo.
+"""
 
 
 def new_logic(user_data_structure):
@@ -57,8 +62,8 @@ def new_logic(user_data_structure):
 
     # Usamos la estructura seleccionada para inicializar todas las listas
     catalog["books"] = data_structure.new_list()
-    catalog["authors"] = #TODO: completar la creacion de la lista de autores
-    catalog["tags"] = #TODO: completar la creacion de la lista de tags
+    catalog["authors"] = None #TODO: completar la creacion de la lista de autores
+    catalog["tags"] = None #TODO: completar la creacion de la lista de tags
     catalog["book_tags"] = data_structure.new_list()
     
     return catalog
@@ -84,7 +89,7 @@ def load_books(catalog):
     cada uno de ellos, se crea en la lista de autores, a dicho autor y una
     referencia al libro que se esta procesando.
     """
-    booksfile = data_dir + #TODO: completar la ruta del archivo de BOOKS
+    booksfile = data_dir + '/books.csv'
     input_file = csv.DictReader(open(booksfile, encoding='utf-8'))
     for book in input_file:
         add_book(catalog, book)
@@ -95,7 +100,7 @@ def load_tags(catalog):
     """
     Carga todos los tags del archivo y los agrega a la lista de tags
     """
-    tagsfile = data_dir + 'GoodReads/tags.csv'
+    tagsfile = data_dir + '/tags.csv'
     input_file = csv.DictReader(open(tagsfile, encoding='utf-8'))
     for tag in input_file:
         add_tag(catalog, tag)
@@ -106,11 +111,12 @@ def load_books_tags(catalog):
     """
     Carga la información que asocia tags con libros.
     """
-    bookstagsfile = data_dir + #TODO: completar la ruta del archivo de BOOKS_TAGS
+    bookstagsfile = #TODO: completar la ruta del archivo de BOOKS_TAGS 
     input_file = csv.DictReader(open(bookstagsfile, encoding='utf-8'))
     for booktag in input_file:
         add_book_tag(catalog, booktag)
     return book_tag_size(catalog)
+
 
 #  -------------------------------------------------------------
 # Funciones para creacion de datos
@@ -144,18 +150,20 @@ def new_book_tag(tag_id, book_id, count):
     book_tag = {'tag_id': tag_id, 'book_id': book_id,'count':count}
     return book_tag
 
+
 #  -------------------------------------------------------------
 # funciones de configuracion para los algoritmos de ordenamiento
 #  -------------------------------------------------------------
 
 def select_sort_algorithm(algo_opt):
     """select_sort_algorithm permite seleccionar el algoritmo de ordenamiento
-    para la lista de pokemon.
+    para la lista.
 
     Args:
         algo_opt (int): opcion de algoritmo de ordenamiento, las opciones son:
-            1: Selection Sort
-            2: Merge Sort
+            1. Selection Sort
+            2. Insertion Sort
+            3. Shell Sort
         
     Returns:
         list: sort_algorithm (sort) la instancia del ordenamiento y
@@ -168,14 +176,21 @@ def select_sort_algorithm(algo_opt):
     algo_msg = None
 
     # selecciona el algoritmo de ordenamiento
-    # opcion 1: Selection Sort
+
+    #opcion 3: Selection Sort
     if algo_opt == 1:
         sort_algorithm = 1 
         algo_msg = "Seleccionó la configuración - Selection Sort"
 
-    # opcion 2: Merge Sort
-    #TODO: completar la opcion de Merge Sort
-    
+    #opcion 4: Insertion Sort
+    #TODO: completar la opcion de Insertion Sort
+
+    #opcion 5: Shell Sort
+    #TODO: completar la opcion de Shell Sort
+
+    else:
+        algo_msg = "No seleccionó una configuración válida"
+
     # respuesta final: algoritmo de ordenamiento y texto de configuracion
     return sort_algorithm, algo_msg
 
@@ -244,15 +259,16 @@ def count_books_by_tag(catalog, tag_name):
 #  -------------------------------------------------------------
 
 def book_size(catalog):
-    return data_structure.size(catalog["books"])
+    #TODO: completar la funcion para obtener el tamaño de la lista de libros
 
 
 def author_size(catalog):
-    return data_structure.size(catalog["authors"])
+    #TODO: completar la funcion para obtener el tamaño de la lista de autores
+    pass
 
-#TODO: completar la funcion para obtener el tamaño de la lista de tags
 def tag_size(catalog):
-    
+    #TODO: completar la funcion para obtener el tamaño de la lista de tags
+    pass
 
 
 def book_tag_size(catalog):
@@ -288,7 +304,8 @@ def compare_book_ids(id, book):
 # funciones para comparar elementos dentro de algoritmos de ordenamientos
 #  -----------------------------------------------
 def eval_ratings(book1, book2):
-    return (float(book1["average_rating"]) > float(book2["average_rating"]))
+    #TODO: completar la función para comparar dos libros por su rating promedio, el libro 1 debe ser mayor al 2.
+    pass
 
 #  -----------------------------------------------
 # Funciones de ordenamiento
@@ -298,13 +315,24 @@ def sort_books(catalog):
     
     sorted_books = catalog["book_sublist"]
     start_time = get_time()
+
+    #TODO: completar las opciones para selection_sort, insertion_sort y shell_sort
+    
     if sort_algorithm == 1:
-        data_structure.selection_sort(sorted_books, eval_ratings)
-    else:
-        #TODO: completar para merge sort
+        #TODO: completar la llamada a selection_sort
+       
+    elif sort_algorithm == 2:
+        #TODO: completar la llamada a insertion_sort
+    
+    elif sort_algorithm == 3:
+        #TODO: completar la llamada a shell_sort
+    
     end_time = get_time()
     delta = delta_time(start_time, end_time)
-    return delta
+
+
+
+    return sorted_books_s, delta 
 
     
 #  -----------------------------------------------   
