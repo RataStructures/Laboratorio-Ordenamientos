@@ -144,7 +144,7 @@ def print_sort_results(sort_books, sample=3):
         if sample > 0:
             # Obtener el libro en la posición actual.
             book = data_structure.get_element(sorted_books, book_pos)
-            # TODO: Completar la lógica para imprimir la información del libro usando print_book_info().
+            # TODO: Completar la lógica para imprimir la información del libro.
             # Disminuir el contador de la muestra.
             sample -= 1
 
@@ -221,7 +221,7 @@ def main():
         elif int(inputs[0]) == 7:
             print("Ordenando los libros por rating ...")
             result = logic.sort_books(control)
-            #TODO:imprimir el resultado del ordenamiento (print_sort_results)
+            #TODO:imprimir el resultado del ordenamiento 
             print("Tiempo de ejecución:", f"{result[1]:.3f}", "[ms]")
 
         elif int(inputs[0]) == 8:
