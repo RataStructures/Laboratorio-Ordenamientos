@@ -111,7 +111,7 @@ def load_books_tags(catalog):
     """
     Carga la información que asocia tags con libros.
     """
-    bookstagsfile = #TODO: completar la ruta del archivo de BOOKS_TAGS 
+    bookstagsfile = None #TODO: completar la ruta del archivo de BOOKS_TAGS 
     input_file = csv.DictReader(open(bookstagsfile, encoding='utf-8'))
     for booktag in input_file:
         add_book_tag(catalog, booktag)
@@ -260,6 +260,7 @@ def count_books_by_tag(catalog, tag_name):
 
 def book_size(catalog):
     #TODO: completar la funcion para obtener el tamaño de la lista de libros
+    pass
 
 
 def author_size(catalog):
@@ -319,13 +320,16 @@ def sort_books(catalog):
     #TODO: completar las opciones para selection_sort, insertion_sort y shell_sort
     
     if sort_algorithm == 1:
+        pass
         #TODO: completar la llamada a selection_sort
        
     elif sort_algorithm == 2:
         #TODO: completar la llamada a insertion_sort
+        pass
     
     elif sort_algorithm == 3:
         #TODO: completar la llamada a shell_sort
+        pass
     
     end_time = get_time()
     delta = delta_time(start_time, end_time)
