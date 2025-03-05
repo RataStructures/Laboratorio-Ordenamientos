@@ -1,12 +1,18 @@
 # Laboratorio 5
 
-Este es el repositorio para el sexto laboratorio. Su objetivo es enseñar a los estudiantes cómo usar ordenamientos recursivos, cómo configurarlos sobre sus diferentes estructuras de datos y cómo integrarlos en la vista y lógica del curso.
+[![Contributors][laboratorio-5-contributors-shield]][laboratorio-5-contributors-url]
+[![Forks][laboratorio-5-forks-shield]][laboratorio-5-forks-url]
+[![Stargazers][laboratorio-5-stars-shield]][laboratorio-5-stars-url]
+[![Issues][laboratorio-5-issues-shield]][laboratorio-5-issues-url]
+[![License][laboratorio-5-license-shield]][laboratorio-5-license-url]
+
+Este es el repositorio para el sexto laboratorio. Su objetivo es enseñar a los estudiantes cómo usar ordenamientos iterativos y recursivos, cómo configurarlos sobre sus diferentes estructuras de datos y cómo integrarlos en la vista y lógica del curso.
 
 Este repositorio forma parte del marco docente de estructura de datos y algoritmos (#EDA) de la Universidad de los Andes. El repositorio fue desarrollado por profesores y personal de la facultad en Departamento de Ingenieria de Sistemas y Computación (#DISC).
 
 **Tabla de contenido (actualizada)**
 
-1. [Sample List](#laboratorio-6)
+1. [Sample List](#laboratorio-5)
    1. [Miembros](#Miembros)
    2. [Acerca del proyecto](#Acerca-del-proyecto)
       1. [Estructura](#Estructura)
@@ -106,10 +112,14 @@ Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA 
 
 ## Autores y Reconocimiento
 
-FALTA
+- [Dario Correal][dariocorreal-url] es el autor original y desarrollador principal de la librería.
+- [Santiago Arteaga][phillipus85-url] es colaborador y administrador de repositorios.
+- [Luis Florez][le99-url] es colaborador y desarrolló los ejemplos y tutoriales para la librería.
+- [Lina Ojeda][lojedaa-url] es colaborador y desarrolló la última versión de la actividad.
 
 [Volver al inicio](#laboratorio-5)
 
+[BrightSpace-url]: https://bloqueneon.uniandes.edu.co/d2l/home
 [data-struc-url]: https://isis1225devs.github.io/ISIS1225-Structure-Documentation/
 [uniandes-url]: https://cursos.virtual.uniandes.edu.co/isis1225/
 [organization-url]: https://github.com/ISIS1225DEVS/
@@ -118,3 +128,20 @@ FALTA
 [bugs-url]: https://github.com/ISIS1225DEVS/ISIS1225-Lib/issues
 [issues-url]: https://github.com/ISIS1225DEVS/ISIS1225-Lib/issues
 [gnu-url]: http://www.gnu.org/licenses/
+[dariocorreal-url]: https://github.com/dariocorreal
+[phillipus85-url]: https://github.com/phillipus85
+[le99-url]: https://github.com/le99
+[lojedaa-url]: https://github.com/lojedaa
+[laboratorio-5-contributors-shield]: https://img.shields.io/github/contributors/ISIS1225DEVS/ISIS1225-Laboratorio-5.svg?style=for-the-badge
+[laboratorio-5-contributors-url]: https://github.com/ISIS1225DEVS/ISIS1225-Laboratorio-5/graphs/contributors
+[laboratorio-5-forks-shield]: https://img.shields.io/github/forks/ISIS1225DEVS/ISIS1225-Laboratorio-5.svg?style=for-the-badge
+[laboratorio-5-forks-url]: https://github.com/ISIS1225DEVS/ISIS1225-Laboratorio-5/network/members
+[laboratorio-5-stars-shield]: https://img.shields.io/github/stars/ISIS1225DEVS/ISIS1225-Laboratorio-5.svg?style=for-the-badge
+[laboratorio-5-stars-url]: https://github.com/ISIS1225DEVS/ISIS1225-Laboratorio-5/stargazers
+[laboratorio-5-issues-shield]: https://img.shields.io/github/issues/ISIS1225DEVS/ISIS1225-Laboratorio-5.svg?style=for-the-badge
+[laboratorio-5-issues-url]: https://github.com/ISIS1225DEVS/ISIS1225-Laboratorio-5/issues
+[laboratorio-5-license-shield]: https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge
+[laboratorio-5-license-url]: https://github.com/ISIS1225DEVS/ISIS1225-Laboratorio-5/blob/master/LICENSE
+[laboratorio-5-bugs-url]: https://github.com/ISIS1225DEVS/ISIS1225-Laboratorio-5/issues
+[laboratorio-5-issues-url]: https://github.com/ISIS1225DEVS/ISIS1225-Laboratorio-5/issues
+[contributors-shield]: https://img.shields.io/github/contributors/ISIS1225DEVS/ISIS1225-Lib.svg?style=for-the-badge
