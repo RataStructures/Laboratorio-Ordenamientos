@@ -22,15 +22,15 @@ def print_test_options():
     print("0. Salir")
 
 
-def execute_all_tests(input_option="1"):
+def execute_all_tests():
     """Ejecuta todas las pruebas disponibles"""
-    execute_list_tests()
+    execute_list_tests("2")
     execute_queue_tests()
     execute_stack_tests()
-    execute_sorting_tests()
+    execute_sorting_tests("5")
 
 
-def execute_list_tests(input_option="2"):
+def execute_list_tests(input_option):
     """Ejecuta pruebas relacionadas con listas"""
     tests_names = []
     if input_option.lower() == "2.a" or input_option == "2":
@@ -40,8 +40,7 @@ def execute_list_tests(input_option="2"):
     for test_name in tests_names:
         execute_pytest_test(test_name)
 
-
-def execute_sorting_tests(input_option="5"):
+def execute_sorting_tests(input_option):
     tests_names = []
     if input_option.lower() == "5.a" or input_option == "5":
         tests_names.append("test_iterative_sort_array_list")
@@ -85,9 +84,9 @@ if __name__ == "__main__":
     if input_option == "4":
         execute_stack_tests()
         runned = True
-
+    
     if input_option.startswith("5"):
-        execute_sorting_tests()
+        execute_sorting_tests("5")
         runned = True
 
     if input_option == "0":
