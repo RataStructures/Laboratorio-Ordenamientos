@@ -60,10 +60,10 @@ def new_logic(user_data_structure):
                "book_tags": None}
 
     # Usamos la estructura seleccionada para inicializar todas las listas
+    # TODO: completar la creacion de la lista de autores y tags
     catalog["books"] = data_structure.new_list()
-    # TODO: completar la creacion de la lista de autores
-    catalog["authors"] = None
-    catalog["tags"] = None  # TODO: completar la creacion de la lista de tags
+    catalog["authors"] = None 
+    catalog["tags"] = None 
     catalog["book_tags"] = data_structure.new_list()
 
     return catalog
@@ -184,22 +184,30 @@ def select_sort_algorithm(algo_opt):
     if algo_opt == 1:
         sort_algorithm = 1
         algo_msg = "Seleccionó la configuración - Selection Sort"
+    
+    # opcion 1: Insertion Sort
+    if algo_opt == 2:
+        sort_algorithm = 2 
+        algo_msg = "Seleccionó la configuración - Insertion Sort"
 
-    # opcion 2: Insertion Sort
-    # TODO: completar la opcion de Insertion Sort
+    # opcion 2: Shell Sort
+    elif algo_opt == 3:
+        sort_algorithm = 3
+        algo_msg = "Seleccionó la configuración - Shell Sort"
+    
+    # opcion 2: Merge Sort
+    elif algo_opt == 4:
+        sort_algorithm = 4 
+        algo_msg = "Seleccionó la configuración - Merge Sort"
 
-    # opcion 3: Shell Sort
-    # TODO: completar la opcion de Shell Sort
-
-    # opcion 4: Merge Sort
-    # TODO: completar la opcion de Merge Sort
-
-    # opcion 5: Quick Sort
-    # TODO: completar la opcion de Quick Sort
+    # opcion 2: Quick Sort
+    elif algo_opt == 5:    
+        sort_algorithm = 5 
+        algo_msg = "Seleccionó la configuración - Quick Sort"
 
     else:
         algo_msg = "No seleccionó una configuración válida"
-
+    
     # respuesta final: algoritmo de ordenamiento y texto de configuracion
     return sort_algorithm, algo_msg
 
@@ -274,18 +282,16 @@ def count_books_by_tag(catalog, tag_name):
 #  -------------------------------------------------------------
 
 
+# TODO: completar las funciones para obtener el tamaño de la lista de libros, autores y tagas
 def book_size(catalog):
-    # TODO: completar la funcion para obtener el tamaño de la lista de libros
     pass
 
 
 def author_size(catalog):
-    # TODO: completar la funcion para obtener el tamaño de la lista de autores
     pass
 
 
 def tag_size(catalog):
-    # TODO: completar la funcion para obtener el tamaño de la lista de tags
     pass
 
 
@@ -340,27 +346,22 @@ def sort_books(catalog):
     sorted_books = catalog["book_sublist"]
     start_time = get_time()
 
-    # TODO: completar las opciones para selection_sort, insertion_sort, shell_sort, merge_sort y quick_sort
+    # TODO: cambie el None para completar las opciones para selection_sort, insertion_sort, shell_sort, merge_sort y quick_sort 
 
     if sort_algorithm == 1:
-        sorted_books_s = None  # TODO: completar la llamada a selection_sort
-        pass
+        sorted_books_s = None  
 
     elif sort_algorithm == 2:
-        # TODO: completar la llamada a insertion_sort
-        pass
+        sorted_books_s = None
 
     elif sort_algorithm == 3:
-        # TODO: completar la llamada a shell_sort
-        pass
+        sorted_books_s = None
 
     elif sort_algorithm == 4:
-        # TODO: completar la llamada a merge_sort
-        pass
+        sorted_books_s = None
 
     elif sort_algorithm == 5:
-        # TODO: completar la llamada a quick_sort
-        pass
+        sorted_books_s = None
 
     end_time = get_time()
     delta = delta_time(start_time, end_time)
