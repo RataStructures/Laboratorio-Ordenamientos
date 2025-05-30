@@ -2,10 +2,22 @@ import os
 
 
 def execute_pytest_test(test_name):
-    os.system(f"pytest -v -k \"{test_name}\"")
-    os.system(f"py -m pytest -v -k \"{test_name}\"")
-    os.system(f"python -m pytest -v -k \"{test_name}\"")
-    os.system(f"python3 -m pytest -v -k \"{test_name}\"")
+    commands = [
+        f'pytest -v -k "{test_name}"',
+        f'py -m pytest -v -k "{test_name}"',
+        f'python -m pytest -v -k "{test_name}"',
+        f'python3 -m pytest -v -k "{test_name}"'
+    ]
+
+    index = 0
+    executed_successfully = False
+
+    while index < len(commands) and not executed_successfully:
+        cmd = commands[index]
+        print(f"Trying: {cmd}")
+        return_code = os.system(cmd)
+        executed_successfully = (return_code == 0)
+        index += 1
 
 
 def print_test_options():
@@ -86,7 +98,7 @@ if __name__ == "__main__":
         runned = True
     
     if input_option.startswith("5"):
-        execute_sorting_tests("5")
+        execute_sorting_tests(input_option)
         runned = True
 
     if input_option == "0":
