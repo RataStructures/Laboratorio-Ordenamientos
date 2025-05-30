@@ -6,7 +6,7 @@
 [![Issues][laboratorio-5-issues-shield]][laboratorio-5-issues-url]
 [![License][laboratorio-5-license-shield]][laboratorio-5-license-url]
 
-Este es el repositorio para el sexto laboratorio. Su objetivo es enseñar a los estudiantes cómo usar ordenamientos iterativos y recursivos, cómo configurarlos sobre sus diferentes estructuras de datos y cómo integrarlos en la vista y lógica del curso.
+Este es el repositorio para el quinto laboratorio. Su objetivo es enseñar a los estudiantes cómo usar ordenamientos iterativos y recursivos, cómo configurarlos sobre sus diferentes estructuras de datos y cómo integrarlos en la vista y lógica del curso.
 
 Este repositorio forma parte del marco docente de estructura de datos y algoritmos (#EDA) de la Universidad de los Andes. El repositorio fue desarrollado por profesores y personal de la facultad en Departamento de Ingenieria de Sistemas y Computación (#DISC).
 
