@@ -6,7 +6,7 @@ def execute_pytest_test(test_name):
         f'pytest -v -k "{test_name}"',
         f'py -m pytest -v -k "{test_name}"',
         f'python -m pytest -v -k "{test_name}"',
-        f'python3 -m pytest -v -k "{test_name}"'
+        f'python3 -m pytest -v -k "{test_name}"',
     ]
 
     index = 0
@@ -16,7 +16,7 @@ def execute_pytest_test(test_name):
         cmd = commands[index]
         print(f"Trying: {cmd}")
         return_code = os.system(cmd)
-        executed_successfully = (return_code == 0)
+        executed_successfully = return_code == 0
         index += 1
 
 
@@ -52,6 +52,7 @@ def execute_list_tests(input_option):
     for test_name in tests_names:
         execute_pytest_test(test_name)
 
+
 def execute_sorting_tests(input_option):
     tests_names = []
     if input_option.lower() == "5.a" or input_option == "5":
@@ -78,8 +79,7 @@ if __name__ == "__main__":
     """Menú principal de pruebas"""
     runned = False
     print_test_options()
-    input_option = str(
-        input("Ingrese el número de la opción que desea ejecutar: \n"))
+    input_option = str(input("Ingrese el número de la opción que desea ejecutar: \n"))
 
     if input_option == "1":
         execute_all_tests()
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     if input_option == "4":
         execute_stack_tests()
         runned = True
-    
+
     if input_option.startswith("5"):
         execute_sorting_tests(input_option)
         runned = True

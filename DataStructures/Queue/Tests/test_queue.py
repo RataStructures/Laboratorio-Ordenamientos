@@ -1,10 +1,11 @@
-
 from DataStructures.Queue import queue as queue
 from DataStructures.Utils.utils import handle_not_implemented
+
 
 def setup_queue():
     # Inicializa una cola vacía para pruebas
     return queue.new_queue()
+
 
 @handle_not_implemented
 def test_new_queue():
@@ -15,17 +16,19 @@ def test_new_queue():
     assert queue.is_empty(my_queue) is True
     assert queue.size(my_queue) == 0
 
+
 @handle_not_implemented
 def test_enqueue():
     # Verifica que los elementos se agregan correctamente al final de la cola
     my_queue = setup_queue()
     queue.enqueue(my_queue, 1)
     assert queue.size(my_queue) == 1
-    assert queue.peek(my_queue) == 1  
+    assert queue.peek(my_queue) == 1
 
     queue.enqueue(my_queue, 10)
     assert queue.size(my_queue) == 2
     assert queue.peek(my_queue) == 1
+
 
 @handle_not_implemented
 def test_dequeue():
@@ -36,10 +39,11 @@ def test_dequeue():
 
     assert queue.dequeue(my_queue) == 10
     assert queue.size(my_queue) == 1
-    assert queue.peek(my_queue) == 20  
+    assert queue.peek(my_queue) == 20
 
     assert queue.dequeue(my_queue) == 20
     assert queue.is_empty(my_queue) is True
+
 
 @handle_not_implemented
 def test_is_empty():
@@ -53,6 +57,7 @@ def test_is_empty():
     queue.dequeue(my_queue)
     assert queue.is_empty(my_queue) is True
 
+
 @handle_not_implemented
 def test_peek():
     # Verifica que `peek` devuelve el primer elemento sin eliminarlo
@@ -62,6 +67,7 @@ def test_peek():
 
     assert queue.peek(my_queue) == "A"
     assert queue.size(my_queue) == 2
+
 
 @handle_not_implemented
 def test_size():
