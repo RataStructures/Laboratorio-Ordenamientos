@@ -334,15 +334,15 @@ def selection_sort(my_list, sort_crit):
         my_sort_list, continue_sorting = new_list(), True
         while continue_sorting:
             n, index = size(my_list), -1
-            max, max_index = first_element(my_list), 0
+            min, min_index = first_element(my_list), 0
             for element in iterator(my_list, 0, n, 1):
                 index += 1
-                update = sort_crit(max, element)
+                update = sort_crit(element, min)
                 if update:
-                    max = element
-                    max_index = index
-            my_sort_list = add_last(my_sort_list, max)
-            my_list = delete_element(my_list, max_index)
+                    min = element
+                    min_index = index
+            my_sort_list = add_last(my_sort_list, min)
+            my_list = delete_element(my_list, min_index)
             continue_sorting = not is_empty(my_list)
         my_list = update_list(my_list, my_sort_list)
     return my_list
