@@ -24,14 +24,14 @@ def setup_tests():
 
 def sort_criteria_increasingly(element1, element2):
     is_sorted = False
-    if element1 <= element2:
+    if element1 < element2:
         is_sorted = True
     return is_sorted
 
 
 def sort_criteria_decreasingly(element1, element2):
     is_sorted = False
-    if element1 >= element2:
+    if element1 > element2:
         is_sorted = True
     return is_sorted
 
