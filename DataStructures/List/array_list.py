@@ -226,17 +226,17 @@ def selection_sort(my_list, sort_crit):
     need_sort = n > 1
     if need_sort:
         for index in range(n):
-            max_index = index
-            max = get_element(my_list, max_index)
+            min_index = index
+            min = get_element(my_list, min_index)
             for potential_index in range(index + 1, n):
                 potential = get_element(my_list, potential_index)
-                update = sort_crit(max, potential)
+                update = sort_crit(potential, min)
                 if update:
-                    max_index = potential_index
-                    max = get_element(my_list, max_index)
-            swap = max_index != index
+                    min_index = potential_index
+                    min = get_element(my_list, min_index)
+            swap = min_index != index
             if swap:
-                my_list = exchange(my_list, index, max_index)
+                my_list = exchange(my_list, index, min_index)
     return my_list
 
 
@@ -277,31 +277,30 @@ def shell_sort(my_list, sort_crit):
 def merge(left, right, sort_crit):
     merged = new_list()
     n_left, n_right = size(left), size(right)
-    n = n_left + n_right
     left_index, right_index = 0, 0
-    while left_index + right_index < n:
-        right_full = right_index == n_right
-        left_full = left_index == n_left
-        if right_full:
-            left_element = get_element(left, left_index)
-            merged = add_last(merged, left_element)
-            left_index += 1
-        elif left_full:
+    run, left_full, right_full = True, False, False
+    while run:
+        if left_full:
             right_element = get_element(right, right_index)
             merged = add_last(merged, right_element)
             right_index += 1
+        elif right_full:
+            left_element = get_element(left, left_index)
+            merged = add_last(merged, left_element)
+            left_index += 1
         else:
             left_element = get_element(left, left_index)
             right_element = get_element(right, right_index)
-            add_left = (
-                sort_crit(left_element, right_element) or left_element == right_element
-            )
+            add_left = not sort_crit(right_element, left_element)
             if add_left:
                 merged = add_last(merged, left_element)
                 left_index += 1
             else:
                 merged = add_last(merged, right_element)
                 right_index += 1
+        left_full = left_index == n_left
+        right_full = right_index == n_right
+        run = (not left_full) or (not right_full)
     return merged
 
 
@@ -310,8 +309,8 @@ def partition(my_list, sort_crit):
     pivot_index = randint(0, n - 1)
     pivot = get_element(my_list, pivot_index)
     less = new_list()
-    equal = new_list()
     greater = new_list()
+    equal = new_list()
     for element in iterator(my_list, 0, n, 1):
         is_less = sort_crit(element, pivot)
         is_greater = sort_crit(pivot, element)
